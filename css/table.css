@@ -1,0 +1,271 @@
+.box 
+{
+	    height: 510px;
+	width: 985px;
+}
+
+.bodytable 
+{
+    height: 510px;
+}
+
+.border 
+{
+	border: #E5EBEF;
+}
+
+.bodytile 
+{
+	    height: 510px;
+	background-color: #cccccc;
+	padding-top: 12px;
+}
+
+.buttonbox 
+{
+	height: auto;
+	width: 143px;
+}
+
+.bannercaption 
+{
+	height: 75px;
+	border: 2px solid #CCCCCC;
+}
+
+.centerlabel 
+{
+	font-family: Verdana;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: none;
+	color: #000000;
+	background-color: #F7FAFF;
+	text-align: center;
+	vertical-align: middle;
+	padding-right: 10px;
+	font-variant: normal;
+	text-decoration: none;
+	white-space: normal;
+}
+
+.copyrighttext 
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	text-transform: none;
+	color: #C5C2C2;
+}
+
+.header 
+{
+	font-family: Verdana;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	text-transform: none;
+	color: #000000;
+	background-color: #FFAE0D;
+	text-align: center;
+	vertical-align: middle;
+	font-variant: normal;
+	text-decoration: none;
+	white-space: normal;
+}
+
+.imagesearch 
+{
+	vertical-align: middle;
+	height: 16px;
+	width: 40px;
+}
+
+.logobox 
+{
+	border: 2px solid #FFFFFF;
+}
+
+.leftbox 
+{
+	height: auto;
+	width: 186px;
+	border-top: 2px solid #FFFFFF;
+	border-right: 2px solid #FFFFFF;
+	border-bottom: 2px solid #FFFFFF;
+	border-left: 2px solid #FFFFFF;
+	margin-bottom: 0px;
+}
+
+.label 
+{
+	font-family: Verdana;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: none;
+	color: #000000;
+	background-color: #F7FAFF;
+	text-align: right;
+	vertical-align: middle;
+	padding-right: 10px;
+	font-variant: normal;
+	text-decoration: none;
+	white-space: normal;
+}
+
+.leftlabel 
+{
+	font-family: Verdana;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: none;
+	color: #000000;
+	background-color: #F7FAFF;
+	text-align: left;
+	vertical-align: middle;
+	padding-right: 10px;
+	font-variant: normal;
+	text-decoration: none;
+	white-space: normal;
+}
+
+.messagetext 
+{
+	font-family: Tahoma;
+	font-size: 12px;
+	line-height: normal;
+	text-transform: none;
+	color: #000000;
+	border: 1px;
+}
+
+.message
+{
+	font-family: Tahoma;
+	font-size: 13px;
+	line-height: normal;
+	text-transform: none;
+	color: #000000;
+	text-align: center;
+	background-color: #FFAE0D;
+	border: 1px;
+}
+
+.mainbox 
+{
+	    height: 510px;
+	width: 778px;
+	border-top: 1px solid #FFFFFF;
+	border-right: 1px solid #E5EBEF;
+	border-bottom: 1px solid #E5EBEF;
+	border-left: 1px solid #E5EBEF;
+}
+
+.signout 
+{
+	height: 575px;
+	width: 752px;
+	border-top: 1px solid #FFFFFF;
+	border-right: 1px solid #E5EBEF;
+	border-bottom: 1px solid #E5EBEF;
+	border-left: 1px solid #E5EBEF;
+}
+
+.minitextfield 
+{
+	font-size: 9px;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-align: left;
+	vertical-align: middle;
+	height: 15px;
+	display: compact;
+	border: 1px solid #ACB5AF;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+	font-family: Tahoma;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: left center;
+	width: 50px;
+}
+
+.outer 
+{
+	    height: 510px;
+	width: 750px;
+	margin-top: 70px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 30px;
+}
+
+.tablerow 
+{
+	height: 22px;
+}
+
+.textfield 
+{
+	font-size: 9px;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-align: left;
+	vertical-align: middle;
+	height: 15px;
+	display: compact;
+	border: 1px solid #ACB5AF;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+	font-family: Tahoma;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: left center;
+	width: 120px;
+}
+
+.textarea 
+{
+	font-size: 9px;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-align: left;
+	vertical-align: middle;
+	display: compact;
+	border: 1px solid #ACB5AF;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+	font-family: Tahoma;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: left center;
+	width: 120px;
+	height: 50px;
+}
+
+.text 
+{
+	font-family: Tahoma;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: none;
+	color: #336633;
+	text-decoration: none;
+	padding-left: 7px;
+}
+.DateTextBox{
+	width : 80px;
+ 	 font-weight:normal; 
+	 font-family: arial;
+}

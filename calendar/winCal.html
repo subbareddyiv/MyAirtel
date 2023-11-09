@@ -1,0 +1,23 @@
+<HTML>
+	<HEAD>
+	<TITLE>Calendar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TITLE>
+	<script>
+	function callSetDate(dateValue)
+	{
+
+		var str=window.location.search.substring(1,window.location.search.length);
+//		alert(str);
+		var intpos1 = str.indexOf(",");
+		str1 = str.substring(0,intpos1);
+		str2 = str.substring(intpos1+1);
+//		alert(str1+'-'+str2);
+		window.opener.document.getElementById(str2).value = dateValue;
+		window.close();
+	}
+	</script>
+	</HEAD>
+	<frameset rows="25,*" frameborder=0 framespacing=0 border=0 bordercolor="#000000">
+		<frame marginwidth=0 noresize scrolling=no src="calendarHead.html" name='calh'>
+		<frame marginwidth=0 noresize scrolling=no src="calendarBody.html"name='calb'>
+	</frameset>
+</HTML>

@@ -1,0 +1,145 @@
+<HTML>
+<HEAD>
+<SCRIPT language=javascript>
+<!--
+var cday=0;
+var cmonth=0;
+var cyear=0;
+var incMonth =0;
+var scmonth= "";
+var day = 0;
+var month = 0;
+var year = 0;
+var calendarColor ="#f6f8fc"
+var HolidayColor ="Red"
+var WorkingDayColor = "Blue"
+var WeekColor = "White"
+function tableCreation1()
+{
+	document.write("<html>");
+	document.write("<body bgcolor=" + calendarColor + ">");
+	document.write("<table border=0 cellspacing=2 cellpadding=0 width=220 align=center bgcolor= " + calendarColor + ">")
+	document.write("<tr bgcolor=#003A75>");
+	document.write("<td align=center width=30 ><font color=" + WeekColor + " face='verdana' size=1><b> Sun</b></font></td>");
+	document.write("<td width=30 align=center ><font color=" + WeekColor + " face='verdana' size=1' ><b>Mon</b></font></td>");
+	document.write("<td width=30 align=center><font color=" + WeekColor + " face='verdana' size=1' ><b>Tue</b></font></td>");
+	document.write("<td width=30 align=center><font color=" + WeekColor + " face='verdana' size=1' ><b>Wed</b></font></td>");
+	document.write("<td width=30 align=center><font color=" + WeekColor + " face='verdana' size=1' ><b>Thu</b></font></td>");
+	document.write("<td width=30 align=center><font color=" + WeekColor + " face='verdana' size=1' ><b>Fri</b></font></td>");
+	document.write("<td width=30 align=center><font color=" + WeekColor + " face='verdana' size=1' ><b>Sat</b></font></td>");
+	document.write("</tr>");
+}
+function setExactDates(day, month, year)
+{
+	if((month==1)&&(isLeapYear(year))){max=29;fixDates();}
+	else
+	{max=daysInMonth(month);fixDates(); }
+}
+function daysInMonth(cMonth)
+{
+	mon=new Array(11);
+	mon[0]=31;mon[1]=28;mon[2]=31;mon[3]=30;mon[4]=31;mon[5]=30;
+	mon[6]=31;mon[7]=31;mon[8]=30;mon[9]=31;mon[10]=30;mon[11]=31;
+	return mon[cMonth];
+}
+function isLeapYear(cYear)
+{
+	if((cYear%4)==0){
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+function setDates(x)
+{
+	scmonth = incMonth .toString();
+	if (x<10)
+	{
+		x ="0"+x;}
+	if (incMonth<10)
+	{
+		scmonth="0"+scmonth;
+	}
+	icurrentDay=scmonth+"/"+x+"/"+cyear;
+	parent.callSetDate(icurrentDay);
+}
+function fixDates()
+{
+	day1 = day + 1
+	count=0;
+	document.write("<tr>");
+	for(j=1;j<day1;j++)
+	{
+		count=count+1;
+		document.write("<td align=center bgcolor=" + calendarColor + ">&nbsp;</td>");
+	}
+	for(i=1;i<max+1;i++)
+	{
+		if (day1==0 || (((i+count)%7)==1))
+		{
+			document.write("<td  align=center><b><a  href='javascript:setDates(" + i + ")' style='javascript:color:blue;text-decoration:none;'><font face='verdana' size=1 color=" + HolidayColor + ">" + (i) + "</font></a></b></td>");
+		}
+		else if(((i+count)%7)!=0)
+		{
+			document.write("<td align=center ><b><a  href='javascript:setDates(" + i + ")' style='javascript:color:blue;text-decoration:none;' ><font face='verdana' size=1 color=" + WorkingDayColor + ">" + (i) + "</font></a></b></td>");
+		}
+		if(((i+count)%7)==0)
+		{
+			document.write("<td align=center ><b><a  href='javascript:setDates(" + i + ")' style='javascript:color:red;text-decoration:none;' ><font face='verdana' size=1 color="+ WorkingDayColor + ">"+ (i) + "</font></a></b></td>");
+			document.write("</tr>");
+			continue;
+		}
+	}
+	for(k=day1+max;k<43;k++)
+	{
+		if(k % 7 ==0 )
+		{
+			document.write("<td align=center bgcolor=" + calendarColor + ">&nbsp;</td>");
+			document.write("</tr>");
+		}
+		 else
+		{
+			document.write("<td align=center  bgcolor=" + calendarColor + ">&nbsp;</td>");
+		}
+	}
+	document.write("</table>");
+	document.write("
+</body>");
+	document.write("</html>");
+}
+function initialize()
+{
+	d=new Date();
+	cday=d.getDay();
+	retvalue = parent.frames[0].retfromChange();
+	if (retvalue)
+	{
+		cmonth=d.getMonth();
+		cyear=d.getFullYear();
+	}
+	else
+	{
+		cmonth = parent.frames[0].getmonth() ;
+		cyear = parent.frames[0].getyear() ;
+	}
+	c=new Date(cyear,cmonth,1);
+	incMonth = cmonth+1;
+	day=c.getDay();
+	month=c.getMonth();
+	year =c.getFullYear();
+	tableCreation1();
+	setExactDates(day,month,year);
+}
+//-->
+</SCRIPT>
+</HEAD>
+<BODY  leftmargin=0 topmargin=0 >
+<SCRIPT language=javascript>
+<!--
+initialize();
+//-->
+</SCRIPT>
+</BODY>
+</HTML>

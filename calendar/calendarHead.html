@@ -1,0 +1,185 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE=JavaScript>
+icount = 0;
+function selectMonth() {
+	idMonth = this.document.monthForm.nm.selectedIndex;
+	parent.frames[1].document.location.href = "calendarBody.html"
+}
+function selectYear() {
+	idyear = this.document.monthForm.ny.selectedIndex;
+	parent.frames[1].document.location.href = "calendarBody.html"
+}
+function retfromChange()
+{
+	if (icount == 0)
+	{
+		test = true;
+		icount =icount+1;
+		return test;
+	}
+	else
+	{
+		test = false;
+		return test;
+	}
+}
+function getmonth() {
+	if(this.document.monthForm.nm.selectedIndex < 0)
+	{
+		this.document.monthForm.nm.selectedIndex=0;
+		return this.document.monthForm.nm.selectedIndex;
+	}
+	if(this.document.monthForm.nm.selectedIndex >=11)
+	{
+		this.document.monthForm.nm.selectedIndex=11;
+		return this.document.monthForm.nm.selectedIndex;
+	}
+	else
+	{
+		return this.document.monthForm.nm.selectedIndex;
+	}
+}
+function getyear(){
+	if(this.document.monthForm.ny.selectedIndex < 0)
+	{
+		this.document.monthForm.ny.selectedIndex=0;
+		return this.document.monthForm.nm.selectedIndex;
+	}
+	else
+	{
+		return this.document.monthForm.ny[this.document.monthForm.ny.selectedIndex].text;
+	}
+}
+function setPrevMonth()
+{
+	var md=--document.monthForm.nm.selectedIndex;
+	if(md>=0 && md<=11)
+	{
+		idMonth = document.monthForm.nm[md].value;
+		parent.frames[1].document.location.href = "calendarBody.html"
+	}
+	if(md<0)
+	{
+		idMonth = 0;
+		parent.frames[1].document.location.href = "calendarBody.html"
+	}
+}
+function setPrevYear()
+{
+	var yd=--document.monthForm.ny.selectedIndex;
+	if(yd>=0 && yd<=119)
+	{
+		idyear = document.monthForm.ny[yd].value;
+		parent.frames[1].document.location.href = "calendarBody.html"
+	}
+	if(yd<0)
+	{
+		idyear = 0;
+		document.monthForm.ny.selectedIndex=0;
+	}
+}
+function setNextYear()
+{
+	var yi=++document.monthForm.ny.selectedIndex;
+	if(yi>=0 && yi<=119)
+	{
+		idyear = document.monthForm.ny[yi].value;
+		parent.frames[1].document.location.href = "calendarBody.html"
+	}
+	if(yi>119)
+	{
+		idyear =119;
+		 document.monthForm.ny.selectedIndex=119;
+	}
+}
+function setNextMonth()
+{
+	var mi=++document.monthForm.nm.selectedIndex;
+	if(mi>=0 && mi<=11)
+	{
+		idMonth = document.monthForm.nm[mi].value;
+		parent.frames[1].document.location.href = "calendarBody.html"
+	}
+	if(mi>11)
+	{
+		idMonth = 11;
+		document.monthForm.nm.selectedIndex=11;
+	}
+}
+</SCRIPT>
+</HEAD>
+<BODY leftmargin=0 topmargin=0 cellspacing="0" cellpadding="0"  bgcolor=#f6f8fc>
+	<form name="monthForm">
+		<table border=0 cellspacing=0 cellpadding=0 bgcolor=#f6f8fc align=center>
+			<tr>
+			<!--	<td rowspan=1 colspan=1>
+					<input type="button" value='<'  name='prevMonth' onclick="setPrevMonth()">
+				</td>
+				<td rowspan=1 colspan=1>
+					<input type="button" value='>'   name='nextMonth' onclick="setNextMonth()">
+				</td>-->
+				<td rowspan=1 colspan=2>
+					<select name="nm"onchange="selectMonth();">
+					<script language=javascript>
+					cd = new Date()
+					curMonth = cd.getMonth();
+					monthArray = new Array(11);
+					monthArray[0]="January"
+					monthArray[1]="February"
+					monthArray[2]="March"
+					monthArray[3]="April"
+					monthArray[4]="May"
+					monthArray[5]="June"
+					monthArray[6]="July"
+					monthArray[7]="August"
+					monthArray[8]="September"
+					monthArray[9]="October"
+					monthArray[10]="November"
+					monthArray[11]="December"
+					for(mon=0;mon<=11;mon++)
+					{
+						if(mon == curMonth)
+						{
+							document.write("<option value='+mon+' selected>"+ monthArray[mon]+" </option>")
+						}
+						else
+						{
+							document.write("<option value='+mon+'>"+ monthArray[mon]+" </option>");
+						}
+					}
+				</script>
+				</select>
+				</td>
+				<td>&nbsp;&nbsp;</td>
+				<td>
+					<select name=ny onchange="selectYear();" >
+					<script language=javascript>
+					for(i=1980;i<=2099;i++)
+					{
+						cd = new Date()
+						curYear = cd.getFullYear();
+						if(i== curYear)
+						{
+						document.write("<option value='+i+' selected>" +i+" </option>");
+						}
+						else
+						{
+							document.write("<option value='+i+'>" +i+"</option>");
+						}
+					}
+				</script>
+				</select>
+				</td>
+				<!--<td rowspan=1 colspan=1>
+				<input type="button" value='<'  name='PrevYear' onClick="setPrevYear()">
+				</td>
+				<td rowspan=1 colspan=1>
+				<input type="button" value='>'    name='NextYear' onClick="setNextYear()">
+				</td>-->
+				</tr>
+			</table>
+		</form>
+	
+</BODY>
+</HTML>
